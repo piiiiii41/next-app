@@ -1,0 +1,50 @@
+
+.repu {
+    float: right;
+}
+.depart{
+    float: right;
+    font-weight: 24px;
+    color: black;
+}
+.popo{
+    padding-top: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1400px;
+}
+.blue{
+    color: #0070c1;
+    font-weight: 700;
+}
+.huto{
+    font-weight: 700;
+    font-size: 20px;
+}
+ol, ul {
+  padding-left: 30px;
+}
+
+ナビゲーションを上部に固定配置
+nav{
+text-align: center;
+}
+nav ul{
+margin: 0 ;
+padding: 0 ;
+}
+nav ul li{
+list-style: none;
+display: inline-block;
+width: 18%;
+min-width: 90px;
+}
+nav ul li a{
+text-decoration: none;
+color: #333;
+}
+
+.header {
+font-size: 48px;
+width: '80%'
+}
