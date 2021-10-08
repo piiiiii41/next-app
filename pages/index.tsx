@@ -1,7 +1,5 @@
 import Link from 'next/link';
-import Layout from '../components/layout';
-import userHome from './userHome';
-import admin from './admin';
+import Layout from '../components/Layout';
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
