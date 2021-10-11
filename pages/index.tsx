@@ -8,6 +8,11 @@ const IndexPage = () => (
       <Link href="/admin">
         <a>admin</a>
       </Link>
+      <br />
+      <Link href="/reviewRegister">
+        <a>レビュー登録</a>
+      </Link>
+      <br />
     </p>
   </Layout>
 );

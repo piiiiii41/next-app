@@ -83,7 +83,8 @@ const topGrid = makeStyles((theme) => ({
     marginRight: 'auto',
     color: 'black',
     borderRadius: 16,
-    backgroundColor: '#fffacd'
+    backgroundColor: '#fffacd',
+    border: '15px'
   }
 }));
 
