@@ -1,7 +1,7 @@
 import React from 'react';
 //import { Link } from 'react-router-dom';
 import Header from '../components/header';
-import Adminpaper from '../components/adminpaper';
+import Rankpaper from '../components/rankpaper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -60,7 +60,7 @@ export default class revewRegister extends React.Component {
             </Grid>
           </Grid>
         </Grid>
-        <Adminpaper />
+        <Rankpaper />
       </React.Fragment>
     );
   }

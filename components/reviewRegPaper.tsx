@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import FileUpload from './fileUpload';
 
 const items = [
   {
@@ -9,8 +10,8 @@ const items = [
     subject_id: '(C-F-001)',
     subject: 'プロジェクトリーダーにに求められるコミュニケーションスキル',
     rating: '★★★★☆',
-    busho: '配電システム部',
-    date: '2021/07/01',
+    busho: '開発センター',
+    date: '2021/07/01 13:01:00',
     impression:
       'プロジェクトリーダーとしての心得や、チームメンバーに対する行動の基本が学べるが、どれも当たり前のことで、特別受ける必要を感じなかった。講師の話は上手かったため、自分のモチベーション向上につながる可能性はある。プロジェクトリーダーに対する考えや経験がゼ…'
   },
@@ -21,7 +22,7 @@ const items = [
       'SwiftによるiOSアプリ開発応用 -Auto Layout、Web API、Core Dataとテーブルビューの',
     rating: '★★★★☆',
     busho: '配電システム部',
-    date: '2021/07/02',
+    date: '2021/07/02 13:01:00',
     impression:
       'プロジェクトリーダーとしての心得や、チームメンバーに対する行動の基本が学べるが、どれも当たり前のことで、特別受ける必要を感じなかった。講師の話は上手かったため、自分のモチベーション向上につながる可能性はある。プロジェクトリーダーに対する考えや経験がゼ…'
   },
@@ -31,7 +32,7 @@ const items = [
     subject: 'プロジェクトリーダーにに求められるコミュニケーションスキル',
     rating: '★★★★☆',
     busho: '配電システム部',
-    date: '2021/07/03',
+    date: '2021/07/03 13:01:00',
     impression:
       'プロジェクトリーダーとしての心得や、チームメンバーに対する行動の基本が学べるが、どれも当たり前のことで、特別受ける必要を感じなかった。講師の話は上手かったため、自分のモチベーション向上につながる可能性はある。プロジェクトリーダーに対する考えや経験がゼ…'
   },
@@ -41,7 +42,7 @@ const items = [
     subject: 'プロジェクトリーダーにに求められるコミュニケーションスキル',
     rating: '★★★★☆',
     busho: '配電システム部',
-    date: '2021/07/04',
+    date: '2021/07/04 13:01:00',
     impression:
       'プロジェクトリーダーとしての心得や、チームメンバーに対する行動の基本が学べるが、どれも当たり前のことで、特別受ける必要を感じなかった。講師の話は上手かったため、自分のモチベーション向上につながる可能性はある。プロジェクトリーダーに対する考えや経験がゼ…'
   },
@@ -51,7 +52,7 @@ const items = [
     subject: 'プロジェクトリーダーにに求められるコミュニケーションスキル',
     rating: '★★★★☆',
     busho: '配電システム部',
-    date: '2021/07/05',
+    date: '2021/07/05 13:01:00',
     impression:
       'プロジェクトリーダーとしての心得や、チームメンバーに対する行動の基本が学べるが、どれも当たり前のことで、特別受ける必要を感じなかった。講師の話は上手かったため、自分のモチベーション向上につながる可能性はある。プロジェクトリーダーに対する考えや経験がゼ…'
   }
@@ -94,7 +95,7 @@ export default function Adminpaper() {
             <div id="huto" className="huto">
               🖊 レビューの登録（レポートアップロード）
               <br />
-              <input type="file" style={{ paddingTop: '3%' }} />
+              <FileUpload />
             </div>
           </Grid>
           <Grid container style={{ paddingTop: '2%' }}>
@@ -111,14 +112,19 @@ export default function Adminpaper() {
                   <Grid
                     item
                     style={{
-                      minWidth: '570px',
+                      minWidth: '590px',
                       color: 'blue',
                       textDecoration: 'underline'
                     }}
                   >
                     {value['subject']}
                   </Grid>
-                  <Grid item>📝{value['rating']}</Grid>
+                  <Grid item style={{ paddingRight: '10px' }}>
+                    📝{value['rating']}
+                  </Grid>
+                  <Grid item style={{ minWidth: '140px' }}>
+                    👤{value['busho']}
+                  </Grid>
                   <Grid item>📅{value['date']}</Grid>
                 </Grid>
               </li>

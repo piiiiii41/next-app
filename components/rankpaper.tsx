@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import ReviewRegPaper from './reviewRegPaper';
+import GetAppOutlinedIcon from '@material-ui/icons/GetAppOutlined';
+import Button from '@material-ui/core/Button';
 
 const rankLists = [
   {
@@ -44,22 +46,16 @@ const topGrid = makeStyles((theme) => ({
     color: '#ffd966',
     borderRadius: 16,
     backgroundColor: '#222b35'
-  }
-}));
-
-const detaliGrid = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1
   },
-  paper: {
-    padding: theme.spacing(2),
-    color: 'black',
+  downroadBtn: {
     borderRadius: 16,
-    backgroundColor: '#f5f5f5'
+    width: '130px',
+    backgroundColor: 'white',
+    color: 'black'
   }
 }));
 
-export default function Adminpaper() {
+export default function Rankpaper() {
   const topStyle = topGrid();
 
   return (
@@ -71,7 +67,11 @@ export default function Adminpaper() {
             <br />
           </Grid>
         </Grid>
-        <Grid container spacing={1} justify="space-between">
+        <Grid
+          container
+          spacing={1}
+          style={{ width: '1300px', marginLeft: 'auto', marginRight: 'auto' }}
+        >
           <Grid item xs={12} sm={6}>
             <Paper className={topStyle.rankPaper} id="paper">
               <Grid
@@ -84,6 +84,17 @@ export default function Adminpaper() {
                     👑 受講者数ランキング（TOP20)
                     <br />
                   </div>
+                </Grid>
+                <Grid item>
+                  <Button
+                    variant="contained"
+                    className={topStyle.downroadBtn}
+                    startIcon={<GetAppOutlinedIcon />}
+                  >
+                    全件出力
+                  </Button>
+                </Grid>
+                <Grid container>
                   <div style={{ paddingTop: '10px' }}>
                     {rankLists.map((value) => (
                       <li style={{ paddingTop: '3px' }}>
@@ -119,6 +130,17 @@ export default function Adminpaper() {
                     👑 評価ランキング（TOP20)
                     <br />
                   </div>
+                </Grid>
+                <Grid item>
+                  <Button
+                    variant="contained"
+                    className={topStyle.downroadBtn}
+                    startIcon={<GetAppOutlinedIcon />}
+                  >
+                    全件出力
+                  </Button>
+                </Grid>
+                <Grid container>
                   <div style={{ paddingTop: '10px' }}>
                     {rankLists.map((value) => (
                       <li style={{ paddingTop: '3px' }}>
