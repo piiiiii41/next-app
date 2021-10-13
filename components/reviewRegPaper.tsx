@@ -98,7 +98,7 @@ export default function Adminpaper() {
               <FileUpload />
             </div>
           </Grid>
-          <Grid container style={{ paddingTop: '2%' }}>
+          <Grid container style={{ paddingTop: '1%' }}>
             <Grid item>
               <div id="huto" className="huto">
                 📅 アップロード履歴（過去20件）

@@ -4,10 +4,13 @@ import { useDropzone } from 'react-dropzone';
 import FolderOpenOutlinedIcon from '@material-ui/icons/FolderOpenOutlined';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import { useMemo } from 'react';
+import React from 'react';
+import List from '@material-ui/core/List';
 
 const style = makeStyles((theme) => ({
   root: {
-    width: 400,
+    width: 800,
     height: 40,
     borderRadius: 10,
     backgroundColor: 'white',
@@ -33,30 +36,57 @@ function FileUpload() {
     // Do something with the files
     console.log('acceptedFiles:', acceptedFiles);
   }, []);
-  const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
+
+  const {
+    getRootProps,
+    getInputProps,
+    isDragActive,
+    open,
+    acceptedFiles
+  } = useDropzone({
     onDrop,
     noClick: true
   });
 
+  const files = useMemo(
+    () =>
+      acceptedFiles.map((file) => (
+        <li key={file.path}>
+          {file.path} - {file.size} bytes
+        </li>
+      )),
+    [acceptedFiles]
+  );
+
   return (
-    <Grid container>
-      <Grid item>
-        <div {...getRootProps()} className={Topstyle.root}>
-          <input {...getInputProps()} />
-          {isDragActive ? <p></p> : <p></p>}
-        </div>
+    <>
+      <Grid container style={{ paddingTop: '10px' }}>
+        <Grid item>
+          <div {...getRootProps()} className={Topstyle.root}>
+            <input {...getInputProps()} />
+            {isDragActive ? <p></p> : <p></p>}
+          </div>
+        </Grid>
+        <Grid item style={{ paddingLeft: '30px' }}>
+          <Button
+            variant="contained"
+            color="default"
+            startIcon={<FolderOpenOutlinedIcon />}
+            style={{ height: 40 }}
+            onClick={open}
+          >
+            ファイルの選択
+          </Button>
+        </Grid>
       </Grid>
-      <Grid item>
-        <Button
-          variant="contained"
-          color="default"
-          startIcon={<FolderOpenOutlinedIcon />}
-          onClick={open}
+      <Grid container>
+        <List
+          style={{ fontSize: '12px', fontWeight: 'normal', paddingLeft: '5px' }}
         >
-          ファイルの選択
-        </Button>
+          {files}
+        </List>
       </Grid>
-    </Grid>
+    </>
   );
 }
 
